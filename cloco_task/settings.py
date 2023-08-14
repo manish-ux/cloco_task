@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     #custom apps of the project
     'cloco_app',
     'core',
+    'rest_framework'
 ]
 
 MIDDLEWARE = [
@@ -125,3 +126,9 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',  # The default ModelBackend
+]
+
+AUTH_USER_MODEL = 'cloco_app.User'
